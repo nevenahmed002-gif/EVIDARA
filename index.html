@@ -26,18 +26,16 @@
   <meta property="og:type" content="website" />
 
   <style>
-
     :root {
       --bg: #07111f;
       --bg2: #0b1728;
       --card: #101e31;
-      --card2: #0d1a2b;
       --text: #f4f7fb;
       --muted: #aebdce;
       --line: rgba(255,255,255,.10);
       --accent: #57d6c7;
       --accent2: #86a9ff;
-      --white: #ffffff;
+      --white: #fff;
       --max: 1120px;
       --radius: 22px;
     }
@@ -87,7 +85,7 @@
       margin: auto;
     }
 
-    /* ================= NAVIGATION ================= */
+    /* NAVIGATION */
 
     .nav {
       position: sticky;
@@ -96,7 +94,7 @@
 
       backdrop-filter: blur(16px);
 
-      background: rgba(7,17,31,.82);
+      background: rgba(7,17,31,.86);
 
       border-bottom: 1px solid var(--line);
     }
@@ -119,7 +117,7 @@
 
       text-decoration: none;
 
-      font-weight: 800;
+      font-weight: 900;
 
       letter-spacing: .08em;
     }
@@ -147,10 +145,9 @@
 
     .nav-links {
       display: flex;
+      gap: 18px;
 
-      gap: 20px;
-
-      font-size: 14px;
+      font-size: 13px;
 
       color: var(--muted);
     }
@@ -160,23 +157,19 @@
     }
 
     .nav-links a:hover {
-      color: var(--white);
+      color: #fff;
     }
 
-    /* ================= HERO ================= */
+    /* HERO */
 
     .hero {
-      padding: 100px 0 75px;
+      padding: 100px 0 70px;
     }
 
-    .eyebrow {
+    .eyebrow,
+    .tag {
       display: inline-flex;
-
       align-items: center;
-
-      gap: 8px;
-
-      padding: 7px 12px;
 
       border: 1px solid rgba(87,214,199,.28);
 
@@ -186,9 +179,15 @@
 
       color: #baf4ed;
 
-      font-size: 13px;
+      font-size: 12px;
 
-      font-weight: 700;
+      font-weight: 800;
+    }
+
+    .eyebrow {
+      padding: 7px 12px;
+
+      letter-spacing: .03em;
     }
 
     h1 {
@@ -200,19 +199,18 @@
 
       letter-spacing: -.045em;
 
-      max-width: 900px;
+      max-width: 930px;
     }
 
-    .hero h1 span {
+    h1 .gradient {
       background:
         linear-gradient(
           90deg,
-          var(--white),
+          #fff,
           #b9d5ff
         );
 
       -webkit-background-clip: text;
-
       background-clip: text;
 
       color: transparent;
@@ -223,9 +221,19 @@
 
       font-size: clamp(18px, 2.4vw, 24px);
 
-      max-width: 800px;
+      max-width: 820px;
 
       margin: 0 0 30px;
+    }
+
+    .hero-tagline {
+      margin: -12px 0 28px;
+
+      color: #8fe9df;
+
+      font-weight: 800;
+
+      font-size: 14px;
     }
 
     .hero-actions {
@@ -256,6 +264,10 @@
       transition: .2s;
     }
 
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
     .btn-primary {
       background: var(--accent);
 
@@ -268,21 +280,14 @@
       background: rgba(255,255,255,.04);
     }
 
-    .btn:hover {
-      transform: translateY(-1px);
-    }
-
-    /* ================= MINI CARDS ================= */
-
     .mini-grid {
       display: grid;
 
-      grid-template-columns:
-        repeat(4, 1fr);
+      grid-template-columns: repeat(4,1fr);
 
       gap: 12px;
 
-      margin-top: 55px;
+      margin-top: 48px;
     }
 
     .mini-card {
@@ -311,7 +316,7 @@
       margin-top: 4px;
     }
 
-    /* ================= SECTIONS ================= */
+    /* SECTIONS */
 
     section {
       padding: 78px 0;
@@ -320,7 +325,7 @@
     }
 
     .section-head {
-      max-width: 760px;
+      max-width: 780px;
 
       margin-bottom: 34px;
     }
@@ -347,19 +352,22 @@
       margin: 9px 0 14px;
     }
 
+    h3 {
+      margin: 0 0 9px;
+
+      font-size: 20px;
+    }
+
     .lead {
       color: var(--muted);
 
       font-size: 17px;
     }
 
-    /* ================= GRIDS ================= */
-
     .grid-2 {
       display: grid;
 
-      grid-template-columns:
-        repeat(2, 1fr);
+      grid-template-columns: repeat(2,1fr);
 
       gap: 18px;
     }
@@ -367,13 +375,10 @@
     .grid-3 {
       display: grid;
 
-      grid-template-columns:
-        repeat(3, 1fr);
+      grid-template-columns: repeat(3,1fr);
 
       gap: 18px;
     }
-
-    /* ================= CARDS ================= */
 
     .card {
       padding: 26px;
@@ -390,42 +395,14 @@
         );
     }
 
-    .card h3 {
-      margin: 0 0 9px;
-
-      font-size: 20px;
-    }
-
     .card p {
       margin: 0;
 
       color: var(--muted);
     }
 
-    .tag {
-      display: inline-block;
-
-      margin: 0 6px 8px 0;
-
-      padding: 6px 10px;
-
-      border-radius: 999px;
-
-      background: rgba(134,169,255,.09);
-
-      border:
-        1px solid rgba(134,169,255,.18);
-
-      color: #cddcff;
-
-      font-size: 12px;
-
-      font-weight: 700;
-    }
-
-    .highlight {
-      border:
-        1px solid rgba(87,214,199,.25);
+    .card.highlight {
+      border-color: rgba(87,214,199,.25);
 
       background:
         linear-gradient(
@@ -435,13 +412,26 @@
         );
     }
 
-    /* ================= FLOW ================= */
+    .tag {
+      display: inline-block;
+
+      margin: 0 6px 8px 0;
+
+      padding: 6px 10px;
+
+      background: rgba(134,169,255,.09);
+
+      border-color: rgba(134,169,255,.18);
+
+      color: #cddcff;
+    }
+
+    /* FLOW */
 
     .flow {
       display: grid;
 
-      grid-template-columns:
-        repeat(4, 1fr);
+      grid-template-columns: repeat(4,1fr);
 
       gap: 10px;
 
@@ -472,7 +462,43 @@
       margin-right: -18px;
     }
 
-    /* ================= ROADMAP ================= */
+    /* METRICS */
+
+    .metric {
+      font-size: 34px;
+
+      font-weight: 900;
+
+      letter-spacing: -.04em;
+
+      margin-bottom: 4px;
+    }
+
+    .metric-label {
+      font-weight: 800;
+    }
+
+    .metric-note {
+      color: var(--muted);
+
+      font-size: 13px;
+
+      margin-top: 7px;
+    }
+
+    .source {
+      color: #8fa5bd;
+
+      font-size: 11px;
+
+      margin-top: 14px;
+    }
+
+    .source a {
+      color: #9cc9ff;
+    }
+
+    /* ROADMAP */
 
     .roadmap {
       display: grid;
@@ -492,7 +518,7 @@
       border-bottom: 1px solid var(--line);
     }
 
-    .roadmap-year {
+    .roadmap-phase {
       font-weight: 900;
 
       color: var(--accent);
@@ -508,7 +534,7 @@
       color: var(--muted);
     }
 
-    /* ================= FOUNDER ================= */
+    /* FOUNDER */
 
     .founder {
       display: grid;
@@ -523,7 +549,7 @@
     .founder img {
       width: 100%;
 
-      aspect-ratio: 1 / 1;
+      aspect-ratio: 1/1;
 
       object-fit: cover;
 
@@ -550,15 +576,53 @@
       margin: 3px 0 18px;
     }
 
-    /* ================= CONTACT ================= */
+    .credential-list {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin-top: 18px;
+    }
+
+    .credential {
+      padding: 8px 11px;
+
+      border-radius: 999px;
+
+      background: rgba(255,255,255,.045);
+
+      border: 1px solid var(--line);
+
+      font-size: 12px;
+
+      color: #d7e2ee;
+    }
+
+    /* CONTACT */
 
     .contact {
       display: grid;
 
-      grid-template-columns:
-        1fr 1fr;
+      grid-template-columns: 1fr 1fr;
 
       gap: 18px;
+    }
+
+    .contact-card {
+      padding: 26px;
+
+      border: 1px solid var(--line);
+
+      border-radius: var(--radius);
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,.045),
+          rgba(255,255,255,.02)
+        );
     }
 
     .contact-card a {
@@ -583,28 +647,25 @@
       color: var(--muted);
     }
 
-    /* ================= DISCLAIMER ================= */
+    /* DISCLAIMER */
 
     .disclaimer {
       margin-top: 20px;
 
       padding: 14px 16px;
 
-      border-left:
-        3px solid var(--accent);
+      border-left: 3px solid var(--accent);
 
-      background:
-        rgba(255,255,255,.03);
+      background: rgba(255,255,255,.03);
 
       color: var(--muted);
 
       font-size: 13px;
 
-      border-radius:
-        0 10px 10px 0;
+      border-radius: 0 10px 10px 0;
     }
 
-    /* ================= FOOTER ================= */
+    /* FOOTER */
 
     footer {
       padding: 35px 0 55px;
@@ -624,9 +685,9 @@
       flex-wrap: wrap;
     }
 
-    /* ================= TABLET ================= */
+    /* MOBILE */
 
-    @media (max-width: 800px) {
+    @media(max-width:800px) {
 
       .nav-links {
         display: none;
@@ -656,9 +717,7 @@
       }
     }
 
-    /* ================= MOBILE ================= */
-
-    @media (max-width: 560px) {
+    @media(max-width:560px) {
 
       .container {
         width: min(94%, var(--max));
@@ -691,14 +750,12 @@
         width: 100%;
       }
     }
-
   </style>
 </head>
 
-
 <body>
 
-  <!-- ================= NAVIGATION ================= -->
+  <!-- NAVIGATION -->
 
   <nav class="nav">
 
@@ -709,21 +766,22 @@
         href="#top"
         aria-label="EVIDARA home"
       >
-
         <span class="brand-mark">E</span>
 
         <span>EVIDARA</span>
-
       </a>
-
 
       <div class="nav-links">
 
+        <a href="#problem">Challenge</a>
+
         <a href="#solution">Solution</a>
 
-        <a href="#focus">Focus</a>
+        <a href="#why-now">Why Now</a>
 
         <a href="#roadmap">Roadmap</a>
+
+        <a href="#partners">Partners</a>
 
         <a href="#founder">Founder</a>
 
@@ -739,27 +797,24 @@
   <main id="top">
 
 
-    <!-- ================= HERO ================= -->
+    <!-- HERO -->
 
     <header class="hero">
 
       <div class="container">
 
         <div class="eyebrow">
-
-          Saudi Rare Disease &amp;
-          Advanced Therapy Evidence
-
+          Saudi Rare Disease &amp; Advanced Therapy Evidence
         </div>
 
 
         <h1>
 
-          <span>
+          <span class="gradient">
             From Patient to Evidence.
           </span>
 
-          <br>
+          <br />
 
           From Evidence to Better Therapies.
 
@@ -768,11 +823,14 @@
 
         <p class="hero-sub">
 
-          EVIDARA is building a Saudi-focused
-          evidence platform connecting patients,
-          clinical research, laboratory evidence,
-          real-world data and advanced therapies.
+          EVIDARA is building a Saudi-focused evidence platform for rare diseases,
+          clinical trials, real-world evidence and advanced therapies.
 
+        </p>
+
+
+        <p class="hero-tagline">
+          Services first. Platform later. Evidence always.
         </p>
 
 
@@ -782,15 +840,15 @@
             class="btn btn-primary"
             href="#contact"
           >
-            Connect with EVIDARA
+            Start a Conversation
           </a>
 
 
           <a
             class="btn btn-secondary"
-            href="#solution"
+            href="#roadmap"
           >
-            Explore the concept
+            View Roadmap
           </a>
 
         </div>
@@ -805,8 +863,7 @@
             </strong>
 
             <span>
-              Feasibility &amp;
-              patient intelligence
+              Feasibility &amp; patient intelligence
             </span>
 
           </div>
@@ -819,8 +876,7 @@
             </strong>
 
             <span>
-              Real-world evidence
-              &amp; outcomes
+              Real-world evidence &amp; outcomes
             </span>
 
           </div>
@@ -833,8 +889,7 @@
             </strong>
 
             <span>
-              Biomarkers
-              &amp; diagnostics
+              Biomarkers &amp; diagnostics
             </span>
 
           </div>
@@ -847,8 +902,7 @@
             </strong>
 
             <span>
-              Biotech &amp;
-              next-generation medicine
+              Biotech &amp; next-generation medicine
             </span>
 
           </div>
@@ -860,7 +914,7 @@
     </header>
 
 
-    <!-- ================= PROBLEM ================= -->
+    <!-- PROBLEM -->
 
     <section id="problem">
 
@@ -873,18 +927,14 @@
           </div>
 
           <h2>
-            Rare-disease development
-            needs local evidence.
+            Rare-disease development needs local evidence.
           </h2>
 
           <p class="lead">
 
-            For rare and genetically driven
-            diseases, clinical-development
-            decisions depend on knowing the
-            patient population, relevant sites,
-            biomarkers, treatment pathways and
-            real-world context in the target market.
+            For rare and genetically driven diseases, clinical-development decisions depend
+            on understanding the patient population, relevant sites, biomarkers, treatment
+            pathways and real-world context in the target market.
 
           </p>
 
@@ -902,10 +952,8 @@
 
             <p>
 
-              Finding and characterizing
-              eligible patients can be difficult
-              when populations are small and
-              distributed across specialist centers.
+              Finding and characterizing eligible patients can be difficult when populations
+              are small and distributed across specialist centers.
 
             </p>
 
@@ -920,8 +968,7 @@
 
             <p>
 
-              Protocol design requires realistic
-              assumptions about population size,
+              Protocol design requires realistic assumptions about population size,
               eligibility, sites and recruitment.
 
             </p>
@@ -937,8 +984,7 @@
 
             <p>
 
-              Clinical, laboratory and real-world
-              evidence often sit across different
+              Clinical, laboratory and real-world evidence can sit across different
               systems and research workflows.
 
             </p>
@@ -948,12 +994,184 @@
 
         </div>
 
+
+        <div class="disclaimer">
+
+          <strong>
+            For sponsors:
+          </strong>
+
+          the question is not only whether a therapy works,
+          but whether the right patients, sites, data and evidence pathways
+          can support development in Saudi Arabia.
+
+        </div>
+
       </div>
 
     </section>
 
 
-    <!-- ================= SOLUTION ================= -->
+    <!-- WHY NOW -->
+
+    <section id="why-now">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="kicker">
+            Why now
+          </div>
+
+          <h2>
+            Saudi Arabia is expanding its clinical and biotechnology ecosystem.
+          </h2>
+
+          <p class="lead">
+
+            The national environment is creating new opportunities for clinical research,
+            biotechnology, real-world evidence and rare-disease development.
+
+          </p>
+
+        </div>
+
+
+        <div class="grid-3">
+
+
+          <div class="card highlight">
+
+            <div class="metric">
+              +$34.6B
+            </div>
+
+            <div class="metric-label">
+              Biotechnology ambition
+            </div>
+
+            <div class="metric-note">
+
+              Targeted contribution to non-oil GDP by 2040 under
+              the National Biotechnology Strategy.
+
+            </div>
+
+            <div class="source">
+              Source: Saudi National Biotechnology Strategy
+            </div>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="metric">
+              +50%
+            </div>
+
+            <div class="metric-label">
+              Clinical-trial growth
+            </div>
+
+            <div class="metric-note">
+
+              Reported growth in clinical trials between 2023 and 2025.
+
+            </div>
+
+            <div class="source">
+              Source: Saudi Vision 2030 / Saudi Press Agency
+            </div>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="metric">
+              +83%
+            </div>
+
+            <div class="metric-label">
+              Advanced-therapy momentum
+            </div>
+
+            <div class="metric-note">
+
+              Increase reported by SFDA in clinical-trial applications
+              for advanced therapies and biotechnology products in 2025.
+
+            </div>
+
+            <div class="source">
+              Source: Saudi Food &amp; Drug Authority
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="card"
+          style="margin-top:18px"
+        >
+
+          <h3>
+            Real-world evidence is becoming part of the development conversation.
+          </h3>
+
+          <p>
+
+            SFDA published a framework for the use of Real-World Data and
+            Real-World Evidence in regulatory decision-making in April 2026.
+
+            For EVIDARA, this reinforces the opportunity to build evidence
+            workflows around Saudi-specific clinical and real-world data.
+
+          </p>
+
+          <div class="source">
+            Source: Saudi Food &amp; Drug Authority, April 2026
+          </div>
+
+        </div>
+
+
+        <div class="disclaimer">
+
+          These figures are opportunity signals for the Saudi ecosystem —
+          not a forecast of EVIDARA revenue and not a standalone market-size
+          estimate for EVIDARA.
+
+        </div>
+
+
+        <div
+          class="card highlight"
+          style="margin-top:18px"
+        >
+
+          <p
+            style="color:#dce8f4;font-weight:700;"
+          >
+
+            EVIDARA is being built carefully:
+            validate real demand, establish the right institutional relationships,
+            generate useful evidence, and only then scale the technology.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SOLUTION -->
 
     <section id="solution">
 
@@ -966,18 +1184,14 @@
           </div>
 
           <h2>
-            One evidence layer across
-            the development journey.
+            One evidence layer across the development journey.
           </h2>
 
           <p class="lead">
 
-            EVIDARA is designed to help
-            biopharma, biotech, diagnostics
-            and research organizations answer
-            Saudi-specific evidence questions —
-            starting with services and evolving
-            toward a platform.
+            EVIDARA is designed to help biopharma, biotech, diagnostics and research
+            organizations answer Saudi-specific evidence questions —
+            starting with services and evolving toward a platform.
 
           </p>
 
@@ -1006,7 +1220,7 @@
 
 
         <div
-          class="grid-2"
+          class="grid-3"
           style="margin-top:20px"
         >
 
@@ -1019,11 +1233,8 @@
 
             <p>
 
-              Saudi trial feasibility,
-              patient-population analysis,
-              site intelligence, recruitment
-              intelligence and protocol-specific
-              evidence.
+              Saudi trial feasibility, patient-population analysis,
+              site intelligence, recruitment intelligence and protocol-specific evidence.
 
             </p>
 
@@ -1038,14 +1249,42 @@
 
             <p>
 
-              Governed clinical, laboratory
-              and real-world evidence workflows
+              Governed clinical, laboratory and real-world evidence workflows
               with traceable evidence provenance.
 
             </p>
 
           </div>
 
+
+          <div class="card">
+
+            <h3>
+              Advanced Therapy Evidence
+            </h3>
+
+            <p>
+
+              Evidence and clinical-development support for rare diseases
+              and advanced therapeutic modalities, without manufacturing
+              the therapies themselves.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="disclaimer">
+
+          <strong>
+            Evidence provenance:
+          </strong>
+
+          EVIDARA's direction is to make analytical results traceable
+          from source data through cleaning, standardization, analysis
+          and final evidence outputs.
 
         </div>
 
@@ -1054,7 +1293,7 @@
     </section>
 
 
-    <!-- ================= FOCUS ================= -->
+    <!-- INITIAL FOCUS -->
 
     <section id="focus">
 
@@ -1067,16 +1306,14 @@
           </div>
 
           <h2>
-            Rare diseases, precision medicine
-            and advanced therapies.
+            Rare diseases, precision medicine and advanced therapies.
           </h2>
 
           <p class="lead">
 
-            The initial focus is deliberately
-            narrow: build useful Saudi-specific
-            evidence capabilities before
-            expanding the platform.
+            The initial focus is deliberately narrow:
+            build useful Saudi-specific evidence capabilities
+            before expanding the platform.
 
           </p>
 
@@ -1094,9 +1331,8 @@
 
             <p>
 
-              Rare diseases, genetic diseases,
-              precision medicine and evidence
-              needs around emerging therapies.
+              Rare diseases, genetic diseases, precision medicine
+              and evidence needs around emerging therapies.
 
             </p>
 
@@ -1111,9 +1347,8 @@
 
             <p>
 
-              Biomarkers, laboratory evidence,
-              diagnostics and real-world evidence
-              studies through appropriate governance.
+              Biomarkers, laboratory evidence, diagnostics
+              and clinical evidence workflows.
 
             </p>
 
@@ -1123,61 +1358,66 @@
           <div class="card">
 
             <h3>
-              Advanced Biotech
+              Real-World Evidence
             </h3>
 
             <p>
 
-              <span class="tag">
-                Therapeutic proteins
-              </span>
-
-              <span class="tag">
-                Peptides
-              </span>
-
-              <span class="tag">
-                Small molecules
-              </span>
-
-              <span class="tag">
-                Stem cells
-              </span>
-
-              <span class="tag">
-                Regenerative medicine
-              </span>
+              Evidence generated from appropriate real-world sources
+              through governed access, privacy and research workflows.
 
             </p>
 
           </div>
 
-
         </div>
 
 
-        <div
-          class="card"
-          style="margin-top:18px"
-        >
+        <div style="margin-top:25px">
 
-          <h3>
-            How EVIDARA reaches patients
-          </h3>
+          <span class="tag">
+            Rare Diseases
+          </span>
 
-          <p>
+          <span class="tag">
+            Genomic Medicine
+          </span>
 
-            Future hybrid and decentralized
-            research models may combine
-            specialist clinical hubs with
-            permitted remote activities such
-            as telemedicine, selected local/home
-            visits, sample collection and
-            patient-reported outcomes — subject
-            to protocol, regulatory and
-            institutional requirements.
+          <span class="tag">
+            Biologics
+          </span>
 
-          </p>
+          <span class="tag">
+            Therapeutic Proteins
+          </span>
+
+          <span class="tag">
+            Peptides
+          </span>
+
+          <span class="tag">
+            Small Molecules
+          </span>
+
+          <span class="tag">
+            Stem Cells
+          </span>
+
+          <span class="tag">
+            Regenerative Medicine
+          </span>
+
+          <span class="tag">
+            Cell Therapy
+          </span>
+
+          <span class="tag">
+            Gene Therapy
+          </span>
+
+          <span class="tag">
+            ATMPs
+          </span>
 
         </div>
 
@@ -1186,29 +1426,27 @@
     </section>
 
 
-    <!-- ================= PATIENT PASSPORT ================= -->
+    <!-- PATIENT ACCESS -->
 
-    <section id="passport">
+    <section id="patients">
 
       <div class="container">
 
         <div class="section-head">
 
           <div class="kicker">
-            Future infrastructure
+            Patient access
           </div>
 
           <h2>
-            Patient Passport
+            Research should not always require the patient to travel.
           </h2>
 
           <p class="lead">
 
-            A future patient-controlled,
-            consent-driven research profile
-            designed to help patients decide
-            what information can be shared
-            for appropriate research purposes.
+            For appropriate protocols, EVIDARA envisions research pathways
+            that can combine specialist centers with permitted remote
+            and community-based activities.
 
           </p>
 
@@ -1221,145 +1459,43 @@
           <div class="card">
 
             <h3>
-              Potential evidence
+              Potential research pathways
             </h3>
 
             <p>
 
-              Medical history, diagnoses,
-              medications, laboratory results,
-              biomarkers, imaging summaries,
-              prior treatments and — where
-              appropriate — genomic information.
+              Remote screening • telemedicine • home or local sample collection •
+              remote monitoring • patient-reported outcomes • specialist-center procedures
 
             </p>
 
           </div>
 
 
-          <div class="card">
+          <div class="card highlight">
 
             <h3>
-              Patient control
+              Built around existing infrastructure
             </h3>
 
             <p>
 
-              The concept is designed around
-              consent, governance and controlled
-              research use. It is not intended
-              to replace a medical record.
+              EVIDARA aims to work with existing Saudi healthcare,
+              home-care and virtual-care capabilities rather than replace
+              them with a new healthcare-delivery network.
 
             </p>
 
           </div>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= OPPORTUNITY ================= -->
-
-    <section id="opportunity">
-
-      <div class="container">
-
-        <div class="section-head">
-
-          <div class="kicker">
-            Why now
-          </div>
-
-          <h2>
-
-            Saudi Arabia is building a
-            stronger environment for
-            biotechnology and clinical research.
-
-          </h2>
-
-          <p class="lead">
-
-            EVIDARA is being developed around
-            this broader opportunity while
-            keeping its own claims focused
-            on the evidence capabilities
-            it can actually build and validate.
-
-          </p>
-
-        </div>
-
-
-        <div class="grid-3">
-
-
-          <div class="card">
-
-            <h3>
-              Clinical research
-            </h3>
-
-            <p>
-
-              Growing clinical-trial activity
-              creates demand for local feasibility
-              and patient-population intelligence.
-
-            </p>
-
-          </div>
-
-
-          <div class="card">
-
-            <h3>
-              RWD / RWE
-            </h3>
-
-            <p>
-
-              Formal frameworks and institutional
-              initiatives create opportunities
-              for governed real-world evidence work.
-
-            </p>
-
-          </div>
-
-
-          <div class="card">
-
-            <h3>
-              Biotechnology
-            </h3>
-
-            <p>
-
-              National biotechnology ambitions
-              create a broader ecosystem for
-              advanced therapies and translational
-              research.
-
-            </p>
-
-          </div>
-
 
         </div>
 
 
         <div class="disclaimer">
 
-          Market and policy signals describe
-          the external environment; they are
-          not EVIDARA revenue forecasts,
-          market-size claims or guarantees
-          of data access.
+          Any remote, home-based or decentralized activity would depend
+          on the study protocol, clinical requirements, applicable regulations
+          and formal partner arrangements.
 
         </div>
 
@@ -1368,7 +1504,7 @@
     </section>
 
 
-    <!-- ================= CUSTOMERS ================= -->
+    <!-- WHO EVIDARA SERVES -->
 
     <section id="customers">
 
@@ -1381,27 +1517,28 @@
           </div>
 
           <h2>
-            Built for organizations developing
-            or evaluating therapies.
+
+            Evidence and clinical-development support for organizations
+            developing healthcare solutions in Saudi Arabia.
+
           </h2>
 
         </div>
 
 
-        <div class="grid-3">
+        <div class="grid-2">
 
 
           <div class="card">
 
             <h3>
-              Pharma
+              Pharma &amp; Biotech
             </h3>
 
             <p>
 
-              Saudi trial feasibility,
-              evidence generation and
-              real-world evidence needs.
+              Trial feasibility, patient-population intelligence,
+              evidence strategy and advanced-therapy development support.
 
             </p>
 
@@ -1411,13 +1548,13 @@
           <div class="card">
 
             <h3>
-              Biotech
+              Diagnostics
             </h3>
 
             <p>
 
-              Clinical-development intelligence
-              for emerging and advanced therapies.
+              Laboratory, biomarker and clinical evidence workflows
+              connected to research questions.
 
             </p>
 
@@ -1427,18 +1564,34 @@
           <div class="card">
 
             <h3>
-              Diagnostics &amp; Research
+              Healthcare &amp; Research Organizations
             </h3>
 
             <p>
 
-              Lab, biomarker, registry and
-              evidence-generation projects.
+              Registry, evidence, research and collaboration opportunities
+              through governed programs.
 
             </p>
 
           </div>
 
+
+          <div class="card">
+
+            <h3>
+              Potential Strategic Partners
+            </h3>
+
+            <p>
+
+              Hospitals, specialist centers, research institutions,
+              technology partners and organizations supporting
+              Saudi clinical research.
+
+            </p>
+
+          </div>
 
         </div>
 
@@ -1447,7 +1600,274 @@
     </section>
 
 
-    <!-- ================= ROADMAP ================= -->
+    <!-- SERVICE TO PLATFORM -->
+
+    <section id="platform">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="kicker">
+            From service to platform
+          </div>
+
+          <h2>
+            Start useful. Build infrastructure. Scale with evidence.
+          </h2>
+
+        </div>
+
+
+        <div class="grid-3">
+
+
+          <div class="card highlight">
+
+            <h3>
+              Today
+            </h3>
+
+            <p>
+
+              <strong>
+                Evidence Services
+              </strong>
+
+              <br />
+
+              Feasibility • patient population analysis •
+              site intelligence • recruitment intelligence •
+              RWE • lab/biomarker evidence
+
+            </p>
+
+          </div>
+
+
+          <div class="card">
+
+            <h3>
+              Next
+            </h3>
+
+            <p>
+
+              <strong>
+                Evidence Platform
+              </strong>
+
+              <br />
+
+              Rare-disease registries • governed evidence networks •
+              research workflows • future Patient Passport
+
+            </p>
+
+          </div>
+
+
+          <div class="card">
+
+            <h3>
+              Long term
+            </h3>
+
+            <p>
+
+              <strong>
+                Patient Modeling
+              </strong>
+
+              <br />
+
+              Patient-level modeling and trial simulation
+              after validation, data partnerships
+              and appropriate governance.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="disclaimer">
+
+          EVIDARA is an early-stage platform.
+          Capabilities described as future or long-term are not presented
+          as currently operational products.
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PATIENT PASSPORT -->
+
+    <section id="future">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="kicker">
+            Future capability
+          </div>
+
+          <h2>
+            Patient Passport: one longitudinal evidence story.
+          </h2>
+
+          <p class="lead">
+
+            EVIDARA envisions a consent-driven research profile
+            that could help organize a patient's longitudinal research journey
+            across relevant clinical, laboratory, treatment and outcome information.
+
+          </p>
+
+        </div>
+
+
+        <div class="grid-2">
+
+
+          <div class="card">
+
+            <h3>
+              Potential evidence domains
+            </h3>
+
+            <p>
+
+              Clinical history • diagnoses • treatments • laboratory results •
+              biomarkers • imaging summaries • research participation • outcomes •
+              genomic information where appropriate
+
+            </p>
+
+          </div>
+
+
+          <div class="card highlight">
+
+            <h3>
+              Patient-controlled participation
+            </h3>
+
+            <p>
+
+              The long-term direction is consent-driven data sharing
+              with clear governance and the ability to support appropriate
+              research questions — not to replace the patient's medical record.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- DIFFERENCE -->
+
+    <section id="difference">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="kicker">
+            What makes EVIDARA different
+          </div>
+
+          <h2>
+            A Saudi-focused evidence direction.
+          </h2>
+
+        </div>
+
+
+        <div class="grid-2">
+
+
+          <div class="card">
+
+            <h3>
+              Study-centric → Evidence-centric
+            </h3>
+
+            <p>
+
+              Move from a single-study view toward connected
+              evidence workflows.
+
+            </p>
+
+          </div>
+
+
+          <div class="card">
+
+            <h3>
+              Center-centric → Patient-access oriented
+            </h3>
+
+            <p>
+
+              Design research pathways around how rare-disease
+              patients can actually be reached.
+
+            </p>
+
+          </div>
+
+
+          <div class="card">
+
+            <h3>
+              Snapshot → Longitudinal evidence
+            </h3>
+
+            <p>
+
+              Build toward evidence that can connect clinical,
+              laboratory and real-world perspectives over time.
+
+            </p>
+
+          </div>
+
+
+          <div class="card">
+
+            <h3>
+              Generic view → Saudi-focused intelligence
+            </h3>
+
+            <p>
+
+              Focus the evidence question on the Saudi
+              clinical-development context.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ROADMAP -->
 
     <section id="roadmap">
 
@@ -1460,9 +1880,17 @@
           </div>
 
           <h2>
-            Start focused. Build evidence.
-            Expand the platform.
+            From trial intelligence to patient modeling.
           </h2>
+
+          <p class="lead">
+
+            A staged approach:
+            validate the evidence layer first,
+            then expand only when data, partnerships
+            and validation support the next step.
+
+          </p>
 
         </div>
 
@@ -1472,8 +1900,8 @@
 
           <div class="roadmap-item">
 
-            <div class="roadmap-year">
-              Year 1
+            <div class="roadmap-phase">
+              YEAR 1
             </div>
 
             <div>
@@ -1484,10 +1912,10 @@
 
               <span>
 
-                Initial feasibility services,
-                selected center partnerships,
-                registry/evidence projects
-                and RWE work.
+                Launch high-value feasibility and patient-population services,
+                establish selected center partnerships, initiate governed registry
+                and real-world evidence projects, and begin building trusted
+                relationships across the Saudi clinical research ecosystem.
 
               </span>
 
@@ -1498,22 +1926,20 @@
 
           <div class="roadmap-item">
 
-            <div class="roadmap-year">
-              Year 2
+            <div class="roadmap-phase">
+              PHASE 02
             </div>
 
             <div>
 
               <strong>
-                Saudi Evidence Network
+                Evidence Network
               </strong>
 
               <span>
 
-                Expand disease areas and
-                institutional partnerships;
-                explore additional governed
-                data and genomic collaborations.
+                Rare-disease registries, governed evidence partnerships
+                and scalable evidence workflows.
 
               </span>
 
@@ -1524,23 +1950,44 @@
 
           <div class="roadmap-item">
 
-            <div class="roadmap-year">
-              Year 3+
+            <div class="roadmap-phase">
+              PHASE 03
             </div>
 
             <div>
 
               <strong>
-                Patient Modeling &amp;
+                Patient Modeling
+              </strong>
+
+              <span>
+
+                Validated patient-level modeling using appropriate
+                Saudi evidence and formal partnerships.
+
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="roadmap-item">
+
+            <div class="roadmap-phase">
+              PHASE 04
+            </div>
+
+            <div>
+
+              <strong>
                 Saudi TwinTrials™
               </strong>
 
               <span>
 
-                Future patient-modeling and
-                trial-simulation capabilities,
-                subject to validation,
-                governance and partnerships.
+                Future trial-simulation capability, subject to validation,
+                governance, partnerships and scientific evidence.
 
               </span>
 
@@ -1548,30 +1995,6 @@
 
           </div>
 
-
-        </div>
-
-
-        <div
-          class="card highlight"
-          style="margin-top:22px"
-        >
-
-          <h3>
-            From service to platform
-          </h3>
-
-          <p>
-
-            EVIDARA can begin with high-value
-            evidence services and progressively
-            turn validated workflows into software.
-            This reduces the need to build
-            national-scale infrastructure before
-            product-market and partnership
-            assumptions have been tested.
-
-          </p>
 
         </div>
 
@@ -1580,7 +2003,7 @@
     </section>
 
 
-    <!-- ================= FOUNDER ================= -->
+    <!-- FOUNDER -->
 
     <section id="founder">
 
@@ -1593,20 +2016,18 @@
           </div>
 
           <h2>
-            Built from laboratory science
-            and clinical research.
+            Built from laboratory science toward clinical evidence.
           </h2>
 
         </div>
 
 
-        <div class="card founder">
+        <div class="founder">
 
 
           <img
             src="founder.jpg"
-            alt="Nievein Ahmed, founder of EVIDARA"
-            loading="lazy"
+            alt="Nievein Ahmed, Founder of EVIDARA"
           />
 
 
@@ -1618,38 +2039,45 @@
 
 
             <p class="founder-role">
-              Founder &amp;
-              Clinical Research Professional
+              Founder &amp; Clinical Research Professional
             </p>
 
 
             <p class="lead">
 
-              Medical Laboratory Scientist
-              with a background in laboratory
-              and diagnostic sciences and
-              Clinical Research. Currently
-              based in Germany and developing
-              EVIDARA with a Saudi-market focus.
+              Medical Laboratory Scientist with a background
+              in laboratory diagnostics and clinical research.
+              Currently based in Germany and building EVIDARA
+              with a clear Saudi-market focus.
 
             </p>
 
 
-            <div style="margin-top:16px">
+            <p class="lead">
 
-              <span class="tag">
+              I combine hands-on experience in laboratory science
+              with practical understanding of clinical research workflows,
+              and I am developing EVIDARA to help close the evidence gap
+              for rare diseases and advanced therapies in Saudi Arabia.
+
+            </p>
+
+
+            <div class="credential-list">
+
+              <span class="credential">
                 Medical Laboratory Science
               </span>
 
-              <span class="tag">
+              <span class="credential">
                 Clinical Research
               </span>
 
-              <span class="tag">
+              <span class="credential">
                 Laboratory &amp; Diagnostics
               </span>
 
-              <span class="tag">
+              <span class="credential">
                 Biotech &amp; Evidence
               </span>
 
@@ -1664,7 +2092,7 @@
     </section>
 
 
-    <!-- ================= VISION ================= -->
+    <!-- BIGGER VISION -->
 
     <section id="vision">
 
@@ -1678,20 +2106,18 @@
 
           <h2>
 
-            Make Saudi-specific evidence
-            easier to generate, understand
-            and use.
+            What if every patient could contribute
+            to a continuously evolving evidence story?
 
           </h2>
 
 
           <p class="lead">
 
-            EVIDARA is being built step by step:
-            validate the market, establish the
-            right partnerships, generate useful
-            evidence, then scale the technology
-            around what works.
+            Clinical journeys, laboratory evidence,
+            biomarkers, treatments and outcomes —
+            connected through appropriate consent,
+            governance and research partnerships.
 
           </p>
 
@@ -1702,7 +2128,40 @@
     </section>
 
 
-    <!-- ================= CONTACT ================= -->
+    <!-- INVESTORS & PARTNERS -->
+
+    <section id="partners">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="kicker">
+            For Investors &amp; Strategic Partners
+          </div>
+
+          <h2>
+            Building the evidence layer for Saudi rare-disease development.
+          </h2>
+
+
+          <p class="lead">
+
+            EVIDARA is currently in early development and market validation.
+            We are open to discussions with investors and partners who share
+            an interest in strengthening Saudi-specific evidence capabilities
+            for rare diseases and advanced therapies.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
 
     <section id="contact">
 
@@ -1715,19 +2174,15 @@
           </div>
 
           <h2>
-
-            Let’s build the evidence layer
-            for the next generation of therapies.
-
+            Let's start a conversation.
           </h2>
 
 
           <p class="lead">
 
-            For partnerships, research
-            collaborations, investors and
-            business discussions, contact
-            the founder directly.
+            EVIDARA is seeking conversations with Saudi healthcare organizations,
+            research centers, biotech and pharma companies, diagnostics organizations,
+            technology partners and potential investors.
 
           </p>
 
@@ -1737,76 +2192,70 @@
         <div class="contact">
 
 
-          <!-- EMAIL -->
-
-          <div class="card contact-card">
+          <div class="contact-card">
 
             <div class="small">
-              EMAIL
+              Founder
             </div>
 
-            <a
-              href="mailto:nevenahmed039@gmail.com"
-            >
+            <strong>
+              Nievein Ahmed
+            </strong>
+
+            <div class="small">
+
+              Founder &amp; Clinical Research Professional
+
+            </div>
+
+
+            <a href="mailto:nevenahmed039@gmail.com">
+
               nevenahmed039@gmail.com
+
             </a>
 
           </div>
 
 
-          <!-- PHONE -->
-
-          <div class="card contact-card">
+          <div class="contact-card">
 
             <div class="small">
-              PHONE
+              Phone
             </div>
 
-            <a
-              href="tel:+4915123544811"
-            >
+
+            <a href="tel:+4915123544811">
+
               +49 151 23544811
+
             </a>
 
-          </div>
 
-
-          <!-- WHATSAPP -->
-
-          <div class="card contact-card">
-
-            <div class="small">
-              WHATSAPP
-            </div>
-
-            <a
-              href="https://wa.me/4915123544811"
-              target="_blank"
-              rel="noopener"
+            <div
+              class="small"
+              style="margin-top:12px"
             >
-              Message on WhatsApp →
-            </a>
 
-          </div>
+              Germany-based founder building for the Saudi market.
 
-
-          <!-- PROJECT STAGE -->
-
-          <div class="card contact-card">
-
-            <div class="small">
-              PROJECT STAGE
             </div>
 
-            <a href="#roadmap">
-
-              Early development ·
-              Market validation →
-
-            </a>
-
           </div>
 
+        </div>
+
+
+        <div class="disclaimer">
+
+          <strong>
+            Early-stage platform.
+          </strong>
+
+          EVIDARA is currently developing its initial product
+          and validating its Saudi market, technology and partnership model.
+          Future capabilities are presented as a roadmap,
+          not as currently operational services.
 
         </div>
 
@@ -1818,29 +2267,18 @@
   </main>
 
 
-  <!-- ================= FOOTER ================= -->
+  <!-- FOOTER -->
 
   <footer>
 
     <div class="container footer-inner">
 
       <div>
-
-        <strong>
-          EVIDARA
-        </strong>
-
-        · Saudi Rare Disease &amp;
-        Advanced Therapy Evidence
-
+        © 2026 EVIDARA
       </div>
 
-
       <div>
-
-        © 2026 EVIDARA.
-        Concept and platform in development.
-
+        Saudi Rare Disease &amp; Advanced Therapy Evidence
       </div>
 
     </div>
