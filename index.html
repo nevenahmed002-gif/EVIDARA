@@ -1,0 +1,2519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EVIDARA | Saudi Rare Disease & Advanced Therapy Evidence</title>
+
+<meta name="description"
+content="EVIDARA is building a Saudi-focused evidence platform connecting patients, clinical research, laboratory evidence, real-world data and advanced therapies.">
+
+<style>
+
+:root{
+    --bg:#07111f;
+    --bg2:#0b1728;
+    --card:#0f1d30;
+    --card2:#12243a;
+    --text:#f5f8fc;
+    --muted:#9eb0c4;
+    --line:rgba(255,255,255,.09);
+    --accent:#6ee7d8;
+    --accent2:#70a7ff;
+    --accent3:#c08cff;
+    --white:#ffffff;
+    --max:1180px;
+    --radius:24px;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    background:
+        radial-gradient(circle at 15% 10%,rgba(112,167,255,.10),transparent 28%),
+        radial-gradient(circle at 85% 20%,rgba(110,231,216,.08),transparent 28%),
+        var(--bg);
+    color:var(--text);
+    line-height:1.65;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+.container{
+    width:min(var(--max),calc(100% - 40px));
+    margin:auto;
+}
+
+section{
+    padding:105px 0;
+    position:relative;
+}
+
+.eyebrow{
+    color:var(--accent);
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.section-title{
+    font-size:clamp(34px,5vw,58px);
+    line-height:1.08;
+    letter-spacing:-2px;
+    max-width:820px;
+    margin-bottom:22px;
+}
+
+.section-title span{
+    color:var(--accent);
+}
+
+.section-lead{
+    color:var(--muted);
+    max-width:720px;
+    font-size:18px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:14px 21px;
+    border-radius:999px;
+    font-weight:700;
+    transition:.25s ease;
+    border:1px solid var(--line);
+}
+
+.btn-primary{
+    background:linear-gradient(135deg,var(--accent),#8af1e6);
+    color:#06131d;
+    border:none;
+}
+
+.btn-secondary{
+    background:rgba(255,255,255,.04);
+    color:var(--text);
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+/* NAV */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:100;
+    backdrop-filter:blur(18px);
+    background:rgba(7,17,31,.72);
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.nav-inner{
+    height:74px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:23px;
+    font-weight:900;
+    letter-spacing:4px;
+}
+
+.logo small{
+    display:block;
+    font-size:7px;
+    letter-spacing:2px;
+    color:var(--muted);
+    font-weight:600;
+    margin-top:-4px;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    align-items:center;
+}
+
+.nav-links a{
+    color:#b9c6d5;
+    font-size:13px;
+    transition:.2s;
+}
+
+.nav-links a:hover{
+    color:white;
+}
+
+.nav-cta{
+    padding:9px 15px;
+    border-radius:999px;
+    background:rgba(110,231,216,.12);
+    color:var(--accent)!important;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding-top:120px;
+    overflow:hidden;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.03fr .97fr;
+    gap:70px;
+    align-items:center;
+}
+
+.hero h1{
+    font-size:clamp(48px,7vw,86px);
+    line-height:.98;
+    letter-spacing:-4px;
+    max-width:800px;
+    margin-bottom:28px;
+}
+
+.hero h1 span{
+    background:linear-gradient(100deg,var(--accent),var(--accent2),var(--accent3));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.hero-subtitle{
+    font-size:17px;
+    color:#b5c4d5;
+    max-width:650px;
+    margin-bottom:34px;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.hero-note{
+    margin-top:22px;
+    color:#73869b;
+    font-size:12px;
+}
+
+/* SCIENCE VISUAL */
+
+.science{
+    min-height:510px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.science-orbit{
+    position:absolute;
+    width:400px;
+    height:400px;
+    border:1px solid rgba(110,231,216,.15);
+    border-radius:50%;
+    animation:spin 24s linear infinite;
+}
+
+.science-orbit.two{
+    width:290px;
+    height:290px;
+    border-color:rgba(112,167,255,.16);
+    animation-duration:18s;
+    animation-direction:reverse;
+}
+
+.science-core{
+    width:145px;
+    height:145px;
+    border-radius:50%;
+    background:
+        radial-gradient(circle at 35% 30%,#b9fff5,transparent 12%),
+        radial-gradient(circle at 60% 60%,#70a7ff,transparent 35%),
+        linear-gradient(145deg,#102b40,#07131f);
+    box-shadow:
+        0 0 50px rgba(110,231,216,.24),
+        0 0 100px rgba(112,167,255,.13);
+    position:relative;
+    z-index:3;
+}
+
+.science-core::after{
+    content:"E";
+    position:absolute;
+    inset:0;
+    display:grid;
+    place-items:center;
+    font-size:60px;
+    font-weight:900;
+    color:white;
+    opacity:.85;
+}
+
+.molecule{
+    position:absolute;
+    width:13px;
+    height:13px;
+    border-radius:50%;
+    background:var(--accent);
+    box-shadow:0 0 22px rgba(110,231,216,.8);
+}
+
+.m1{top:16%;left:24%;animation:float 4s infinite;}
+.m2{top:23%;right:15%;background:var(--accent2);animation:float 5s infinite .4s;}
+.m3{bottom:18%;left:16%;background:var(--accent3);animation:float 4.5s infinite .7s;}
+.m4{bottom:13%;right:24%;animation:float 5.5s infinite 1s;}
+.m5{top:48%;left:3%;background:var(--accent2);animation:float 6s infinite .2s;}
+
+.dna{
+    position:absolute;
+    width:110px;
+    height:330px;
+    right:8%;
+    opacity:.55;
+    transform:rotate(18deg);
+}
+
+.dna::before,
+.dna::after{
+    content:"";
+    position:absolute;
+    width:4px;
+    height:100%;
+    border-radius:50%;
+    background:linear-gradient(to bottom,var(--accent),var(--accent2),var(--accent3));
+}
+
+.dna::before{left:20px;}
+.dna::after{right:20px;}
+
+.dna-line{
+    position:absolute;
+    left:20px;
+    right:20px;
+    height:2px;
+    background:rgba(255,255,255,.25);
+}
+
+.l1{top:30px}.l2{top:75px}.l3{top:120px}.l4{top:165px}
+.l5{top:210px}.l6{top:255px}.l7{top:300px}
+
+.chart{
+    position:absolute;
+    bottom:12%;
+    left:12%;
+    width:220px;
+    height:120px;
+    border-left:1px solid rgba(255,255,255,.2);
+    border-bottom:1px solid rgba(255,255,255,.2);
+}
+
+.chart svg{
+    width:100%;
+    height:100%;
+}
+
+@keyframes spin{
+    to{transform:rotate(360deg);}
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-16px)}
+}
+
+/* TRUST BAR */
+
+.trust{
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:28px 0;
+}
+
+.trust-row{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:20px;
+    color:#8fa2b7;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+}
+
+/* PROBLEM */
+
+.problem-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+    margin-top:50px;
+}
+
+.card{
+    background:linear-gradient(145deg,rgba(18,36,58,.9),rgba(9,23,39,.9));
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:28px;
+}
+
+.problem-card{
+    min-height:230px;
+}
+
+.icon{
+    width:45px;
+    height:45px;
+    display:grid;
+    place-items:center;
+    border-radius:13px;
+    background:rgba(110,231,216,.09);
+    color:var(--accent);
+    font-size:21px;
+    margin-bottom:25px;
+}
+
+.card h3{
+    font-size:19px;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* EVIDENCE */
+
+.evidence{
+    background:
+        linear-gradient(180deg,transparent,rgba(15,29,48,.65),transparent);
+}
+
+.evidence-box{
+    margin-top:48px;
+    padding:45px;
+    border-radius:30px;
+    border:1px solid rgba(110,231,216,.14);
+    background:rgba(110,231,216,.035);
+}
+
+.evidence-quote{
+    font-size:clamp(25px,4vw,42px);
+    line-height:1.2;
+    letter-spacing:-1px;
+    max-width:900px;
+}
+
+.evidence-quote span{
+    color:var(--accent);
+}
+
+.evidence-list{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-top:35px;
+}
+
+.evidence-item{
+    padding-top:20px;
+    border-top:1px solid var(--line);
+}
+
+.evidence-item strong{
+    display:block;
+    margin-bottom:7px;
+}
+
+.evidence-item p{
+    color:var(--muted);
+    font-size:13px;
+}
+
+/* GAP */
+
+.gap-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+    margin-top:50px;
+}
+
+.fragmented,
+.connected{
+    padding:38px;
+    border-radius:28px;
+    border:1px solid var(--line);
+}
+
+.fragmented{
+    background:rgba(255,255,255,.025);
+}
+
+.connected{
+    background:
+        linear-gradient(145deg,rgba(110,231,216,.09),rgba(112,167,255,.05));
+    border-color:rgba(110,231,216,.2);
+}
+
+.flow{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:10px;
+    margin-top:25px;
+}
+
+.flow span{
+    padding:10px 14px;
+    border-radius:999px;
+    background:rgba(255,255,255,.06);
+    border:1px solid var(--line);
+    font-size:12px;
+}
+
+.flow b{
+    color:var(--accent);
+}
+
+/* SOLUTION */
+
+.solution-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-top:50px;
+}
+
+.solution-card{
+    min-height:320px;
+    position:relative;
+    overflow:hidden;
+}
+
+.solution-card::after{
+    content:"";
+    position:absolute;
+    width:150px;
+    height:150px;
+    right:-50px;
+    bottom:-50px;
+    border-radius:50%;
+    background:rgba(110,231,216,.06);
+}
+
+.solution-number{
+    color:var(--accent);
+    font-weight:800;
+    letter-spacing:2px;
+    font-size:12px;
+    margin-bottom:30px;
+}
+
+/* PATIENT */
+
+.patient-section{
+    overflow:hidden;
+}
+
+.patient-grid{
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.passport{
+    padding:32px;
+    border-radius:30px;
+    background:linear-gradient(145deg,#10253a,#081522);
+    border:1px solid rgba(110,231,216,.18);
+    box-shadow:0 30px 90px rgba(0,0,0,.25);
+}
+
+.passport-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:28px;
+}
+
+.status{
+    font-size:10px;
+    color:var(--accent);
+    padding:7px 10px;
+    border-radius:999px;
+    background:rgba(110,231,216,.09);
+}
+
+.profile{
+    display:flex;
+    gap:18px;
+    align-items:center;
+    margin-bottom:28px;
+}
+
+.avatar{
+    width:58px;
+    height:58px;
+    border-radius:18px;
+    background:linear-gradient(135deg,var(--accent2),var(--accent3));
+    display:grid;
+    place-items:center;
+    font-weight:900;
+}
+
+.profile small{
+    color:var(--muted);
+}
+
+.data-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.data{
+    padding:15px;
+    border-radius:15px;
+    background:rgba(255,255,255,.035);
+}
+
+.data span{
+    display:block;
+    color:#71849a;
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.data strong{
+    font-size:14px;
+}
+
+.patient-copy h2{
+    font-size:clamp(36px,5vw,62px);
+    line-height:1.05;
+    letter-spacing:-2px;
+    margin-bottom:20px;
+}
+
+.patient-copy h2 span{
+    color:var(--accent);
+}
+
+.patient-copy p{
+    color:var(--muted);
+    margin-bottom:18px;
+}
+
+.principle{
+    padding:18px 20px;
+    border-left:2px solid var(--accent);
+    background:rgba(110,231,216,.045);
+    margin-top:25px;
+}
+
+/* HOME ACCESS */
+
+.access{
+    background:linear-gradient(180deg,rgba(9,23,39,.7),transparent);
+}
+
+.access-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:60px;
+    align-items:center;
+}
+
+.access-path{
+    margin-top:38px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+.access-step{
+    padding:20px;
+    border:1px solid var(--line);
+    border-radius:20px;
+    background:rgba(255,255,255,.025);
+}
+
+.access-step strong{
+    display:block;
+    margin-bottom:7px;
+}
+
+.access-step span{
+    color:var(--muted);
+    font-size:12px;
+}
+
+.access-statement{
+    padding:45px;
+    border-radius:30px;
+    background:
+        radial-gradient(circle at 80% 20%,rgba(112,167,255,.16),transparent 35%),
+        linear-gradient(145deg,#102238,#091522);
+    border:1px solid rgba(112,167,255,.16);
+}
+
+.access-statement h3{
+    font-size:35px;
+    line-height:1.1;
+    letter-spacing:-1px;
+    margin-bottom:20px;
+}
+
+.access-statement p{
+    color:var(--muted);
+}
+
+/* OPPORTUNITY */
+
+.opportunity{
+    background:
+        radial-gradient(circle at 20% 30%,rgba(110,231,216,.07),transparent 25%),
+        radial-gradient(circle at 80% 60%,rgba(112,167,255,.08),transparent 25%);
+}
+
+.opportunity-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap:30px;
+}
+
+.opportunity-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-top:48px;
+}
+
+.op-card{
+    padding:35px;
+    border-radius:28px;
+    background:rgba(255,255,255,.035);
+    border:1px solid var(--line);
+}
+
+.op-number{
+    font-size:48px;
+    line-height:1;
+    font-weight:900;
+    letter-spacing:-3px;
+    margin-bottom:18px;
+    background:linear-gradient(100deg,var(--accent),var(--accent2));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.op-card h3{
+    margin-bottom:8px;
+}
+
+.op-card p{
+    color:var(--muted);
+    font-size:13px;
+}
+
+.op-source{
+    display:block;
+    margin-top:20px;
+    color:#6e8298;
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.opportunity-note{
+    margin-top:25px;
+    color:#72859b;
+    font-size:11px;
+}
+
+/* CUSTOMERS */
+
+.customer-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-top:45px;
+}
+
+.customer{
+    padding:25px;
+    border:1px solid var(--line);
+    border-radius:20px;
+    background:rgba(255,255,255,.025);
+}
+
+.customer strong{
+    display:block;
+    margin-bottom:7px;
+}
+
+.customer p{
+    color:var(--muted);
+    font-size:12px;
+}
+
+/* BUSINESS MODEL */
+
+.business-box{
+    margin-top:45px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    border:1px solid var(--line);
+    border-radius:28px;
+    overflow:hidden;
+}
+
+.business-step{
+    padding:35px;
+    background:rgba(255,255,255,.025);
+    border-right:1px solid var(--line);
+}
+
+.business-step:last-child{
+    border-right:none;
+}
+
+.business-step small{
+    color:var(--accent);
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+.business-step h3{
+    font-size:24px;
+    margin:13px 0;
+}
+
+.business-step p{
+    color:var(--muted);
+    font-size:13px;
+}
+
+/* DIFFERENCE */
+
+.compare{
+    overflow:hidden;
+}
+
+.compare-table{
+    margin-top:45px;
+    border:1px solid var(--line);
+    border-radius:28px;
+    overflow:hidden;
+}
+
+.compare-row{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    border-bottom:1px solid var(--line);
+}
+
+.compare-row:last-child{
+    border-bottom:none;
+}
+
+.compare-row > div{
+    padding:20px 24px;
+    border-right:1px solid var(--line);
+    font-size:13px;
+}
+
+.compare-row > div:last-child{
+    border-right:none;
+}
+
+.compare-head{
+    color:#8194aa;
+    text-transform:uppercase;
+    letter-spacing:1.3px;
+    font-size:10px!important;
+}
+
+.compare-evidara{
+    color:var(--accent);
+    background:rgba(110,231,216,.035);
+}
+
+/* ADVANCED THERAPY */
+
+.pills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:35px;
+}
+
+.pill{
+    padding:11px 15px;
+    border-radius:999px;
+    border:1px solid rgba(192,140,255,.18);
+    background:rgba(192,140,255,.05);
+    color:#d8c4f2;
+    font-size:12px;
+}
+
+/* ROADMAP */
+
+.roadmap{
+    position:relative;
+    margin-top:55px;
+}
+
+.roadmap-line{
+    position:absolute;
+    top:35px;
+    left:5%;
+    right:5%;
+    height:1px;
+    background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent3));
+    opacity:.35;
+}
+
+.roadmap-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+    position:relative;
+}
+
+.phase{
+    padding:25px;
+    border:1px solid var(--line);
+    border-radius:22px;
+    background:var(--bg);
+}
+
+.phase-dot{
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:var(--accent);
+    box-shadow:0 0 0 7px rgba(110,231,216,.08);
+    margin:6px auto 28px;
+}
+
+.phase small{
+    color:var(--accent);
+    letter-spacing:2px;
+}
+
+.phase h3{
+    margin:10px 0;
+}
+
+.phase p{
+    color:var(--muted);
+    font-size:12px;
+}
+
+/* WHY */
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:10px;
+    margin-top:45px;
+}
+
+.why{
+    padding:22px 15px;
+    text-align:center;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:rgba(255,255,255,.025);
+}
+
+.why strong{
+    font-size:12px;
+}
+
+/* FOUNDER */
+
+.founder{
+    background:
+        radial-gradient(circle at 70% 40%,rgba(112,167,255,.08),transparent 30%);
+}
+
+.founder-grid{
+    display:grid;
+    grid-template-columns:.72fr 1.28fr;
+    gap:75px;
+    align-items:center;
+}
+
+.founder-photo{
+    border-radius:30px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    background:#0d1b2b;
+}
+
+.founder-photo img{
+    width:100%;
+    aspect-ratio:4/5;
+    object-fit:cover;
+}
+
+.founder-copy h2{
+    font-size:clamp(38px,5vw,62px);
+    line-height:1.05;
+    letter-spacing:-2px;
+    margin-bottom:25px;
+}
+
+.founder-copy p{
+    color:var(--muted);
+    margin-bottom:17px;
+}
+
+.credentials{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:28px;
+}
+
+.credential{
+    padding:9px 12px;
+    border:1px solid var(--line);
+    border-radius:999px;
+    color:#b8c7d7;
+    font-size:11px;
+}
+
+/* VISION */
+
+.vision{
+    text-align:center;
+    padding-bottom:120px;
+}
+
+.vision h2{
+    font-size:clamp(40px,7vw,82px);
+    line-height:.98;
+    letter-spacing:-4px;
+    max-width:900px;
+    margin:0 auto 28px;
+}
+
+.vision h2 span{
+    color:var(--accent);
+}
+
+.vision p{
+    color:var(--muted);
+    max-width:700px;
+    margin:auto;
+}
+
+/* INVESTOR */
+
+.investor{
+    padding-top:60px;
+}
+
+.investor-box{
+    padding:65px;
+    border-radius:35px;
+    background:
+        radial-gradient(circle at 85% 20%,rgba(112,167,255,.16),transparent 25%),
+        radial-gradient(circle at 10% 80%,rgba(110,231,216,.11),transparent 25%),
+        linear-gradient(145deg,#102238,#091522);
+    border:1px solid rgba(110,231,216,.16);
+    text-align:center;
+}
+
+.investor-box h2{
+    font-size:clamp(36px,5vw,58px);
+    line-height:1.05;
+    letter-spacing:-2px;
+    margin-bottom:20px;
+}
+
+.investor-box p{
+    color:var(--muted);
+    max-width:680px;
+    margin:0 auto 30px;
+}
+
+/* CONTACT */
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr .8fr;
+    gap:40px;
+    align-items:start;
+}
+
+.contact-card{
+    padding:38px;
+    border:1px solid var(--line);
+    border-radius:28px;
+    background:rgba(255,255,255,.025);
+}
+
+.contact-card h3{
+    font-size:27px;
+    margin-bottom:12px;
+}
+
+.contact-card p{
+    color:var(--muted);
+    margin-bottom:25px;
+}
+
+.email{
+    display:inline-block;
+    color:var(--accent);
+    font-weight:700;
+    font-size:17px;
+    word-break:break-word;
+}
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid var(--line);
+    padding:30px 0;
+}
+
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    color:#6f8195;
+    font-size:11px;
+}
+
+.footer-brand{
+    color:white;
+    letter-spacing:3px;
+    font-weight:800;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:950px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero-grid,
+    .patient-grid,
+    .access-grid,
+    .founder-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .science{
+        min-height:420px;
+        order:-1;
+    }
+
+    .problem-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .solution-grid,
+    .opportunity-grid{
+        grid-template-columns:1fr;
+    }
+
+    .customer-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .roadmap-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .roadmap-line{
+        display:none;
+    }
+
+    .why-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .business-box{
+        grid-template-columns:1fr;
+    }
+
+    .business-step{
+        border-right:none;
+        border-bottom:1px solid var(--line);
+    }
+
+    .business-step:last-child{
+        border-bottom:none;
+    }
+
+}
+
+@media(max-width:620px){
+
+    section{
+        padding:75px 0;
+    }
+
+    .container{
+        width:min(var(--max),calc(100% - 28px));
+    }
+
+    .hero{
+        padding-top:100px;
+    }
+
+    .hero h1{
+        font-size:50px;
+        letter-spacing:-3px;
+    }
+
+    .science{
+        min-height:340px;
+    }
+
+    .science-orbit{
+        width:280px;
+        height:280px;
+    }
+
+    .science-orbit.two{
+        width:210px;
+        height:210px;
+    }
+
+    .science-core{
+        width:105px;
+        height:105px;
+    }
+
+    .science-core::after{
+        font-size:42px;
+    }
+
+    .dna{
+        transform:scale(.7) rotate(18deg);
+        right:-5%;
+    }
+
+    .chart{
+        transform:scale(.7);
+        left:-2%;
+        bottom:2%;
+    }
+
+    .problem-grid,
+    .evidence-list,
+    .access-path,
+    .customer-grid,
+    .roadmap-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gap-grid{
+        grid-template-columns:1fr;
+    }
+
+    .compare-row{
+        grid-template-columns:1fr;
+    }
+
+    .compare-row > div{
+        border-right:none;
+        border-bottom:1px solid var(--line);
+    }
+
+    .compare-row > div:last-child{
+        border-bottom:none;
+    }
+
+    .opportunity-header{
+        display:block;
+    }
+
+    .investor-box{
+        padding:38px 24px;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+
+<nav>
+<div class="container nav-inner">
+
+    <a href="#top" class="logo">
+        EVIDARA
+        <small>SAUDI RARE DISEASE & ADVANCED THERAPY EVIDENCE</small>
+    </a>
+
+    <div class="nav-links">
+        <a href="#problem">Problem</a>
+        <a href="#solution">Solution</a>
+        <a href="#opportunity">Opportunity</a>
+        <a href="#platform">Platform</a>
+        <a href="#founder">Founder</a>
+        <a href="#contact" class="nav-cta">Partners & Investors</a>
+    </div>
+
+</div>
+</nav>
+
+
+<!-- HERO -->
+
+<main id="top">
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+    <div>
+
+        <div class="eyebrow">
+            Saudi Rare Disease & Advanced Therapy Evidence
+        </div>
+
+        <h1>
+            From <span>Patient</span> to Evidence.
+            From Evidence to Better Therapies.
+        </h1>
+
+        <p class="hero-subtitle">
+            EVIDARA is building a Saudi-focused evidence platform connecting
+            patients, clinical research, laboratory evidence, real-world data
+            and advanced therapies.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#platform" class="btn btn-primary">
+                Explore EVIDARA →
+            </a>
+
+            <a href="#investor" class="btn btn-secondary">
+                For Investors & Partners
+            </a>
+        </div>
+
+        <div class="hero-note">
+            Early-stage platform • Saudi-focused • Evidence-driven
+        </div>
+
+    </div>
+
+
+    <div class="science">
+
+        <div class="science-orbit"></div>
+        <div class="science-orbit two"></div>
+
+        <div class="science-core"></div>
+
+        <div class="molecule m1"></div>
+        <div class="molecule m2"></div>
+        <div class="molecule m3"></div>
+        <div class="molecule m4"></div>
+        <div class="molecule m5"></div>
+
+        <div class="dna">
+            <div class="dna-line l1"></div>
+            <div class="dna-line l2"></div>
+            <div class="dna-line l3"></div>
+            <div class="dna-line l4"></div>
+            <div class="dna-line l5"></div>
+            <div class="dna-line l6"></div>
+            <div class="dna-line l7"></div>
+        </div>
+
+        <div class="chart">
+            <svg viewBox="0 0 220 120" preserveAspectRatio="none">
+                <polyline
+                    points="0,100 35,83 60,88 88,55 115,66 142,40 170,48 195,20 220,8"
+                    fill="none"
+                    stroke="rgba(110,231,216,.8)"
+                    stroke-width="3"/>
+            </svg>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- TRUST -->
+
+<div class="trust">
+
+<div class="container trust-row">
+    <span>Clinical Research</span>
+    <span>Real-World Evidence</span>
+    <span>Rare Diseases</span>
+    <span>Advanced Therapies</span>
+    <span>Laboratory Evidence</span>
+    <span>Patient-Centered</span>
+</div>
+
+</div>
+
+
+<!-- PROBLEM -->
+
+<section id="problem">
+
+<div class="container">
+
+    <div class="eyebrow">01 — The Problem</div>
+
+    <h2 class="section-title">
+        Rare disease research is not only a
+        <span>science problem.</span>
+        It is an evidence-access problem.
+    </h2>
+
+    <p class="section-lead">
+        Patients can be few, geographically dispersed and clinically complex.
+        Researchers need reliable evidence. Sponsors need feasibility.
+        Healthcare systems need better visibility across the patient journey.
+    </p>
+
+
+    <div class="problem-grid">
+
+        <div class="card problem-card">
+            <div class="icon">⌬</div>
+            <h3>Fragmented Evidence</h3>
+            <p>
+                Clinical, laboratory, genomic and outcome information can exist
+                across different systems and institutions.
+            </p>
+        </div>
+
+        <div class="card problem-card">
+            <div class="icon">◌</div>
+            <h3>Hard-to-Reach Patients</h3>
+            <p>
+                Rare disease populations are small and may be distributed
+                across different regions of the Kingdom.
+            </p>
+        </div>
+
+        <div class="card problem-card">
+            <div class="icon">↗</div>
+            <h3>Trial Feasibility</h3>
+            <p>
+                Sponsors need to understand whether the right patients,
+                sites and capabilities exist before launching a study.
+            </p>
+        </div>
+
+        <div class="card problem-card">
+            <div class="icon">⌁</div>
+            <h3>Evidence Beyond the Trial</h3>
+            <p>
+                Longitudinal real-world evidence can help answer questions
+                that a conventional trial alone cannot fully address.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- EVIDENCE BEHIND THE PROBLEM -->
+
+<section class="evidence">
+
+<div class="container">
+
+    <div class="eyebrow">02 — Evidence Behind the Problem</div>
+
+    <h2 class="section-title">
+        We do not start with a
+        <span>story.</span>
+        We start with evidence.
+    </h2>
+
+    <div class="evidence-box">
+
+        <div class="evidence-quote">
+            Saudi clinical research and biotechnology are expanding —
+            while the need for <span>connected, locally relevant evidence</span>
+            becomes increasingly important.
+        </div>
+
+        <div class="evidence-list">
+
+            <div class="evidence-item">
+                <strong>Clinical research is growing</strong>
+                <p>
+                    Saudi Vision 2030 reported 50% growth in clinical trials
+                    between 2023 and 2025.
+                </p>
+            </div>
+
+            <div class="evidence-item">
+                <strong>Advanced therapies are accelerating</strong>
+                <p>
+                    SFDA reported an 83% increase in clinical-trial
+                    applications for advanced therapies and biotechnology
+                    products in 2025.
+                </p>
+            </div>
+
+            <div class="evidence-item">
+                <strong>RWE is becoming regulatory infrastructure</strong>
+                <p>
+                    SFDA issued its framework for the use of Real-World Data
+                    and Real-World Evidence in April 2026.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- GAP -->
+
+<section>
+
+<div class="container">
+
+    <div class="eyebrow">03 — The Gap</div>
+
+    <h2 class="section-title">
+        The problem is not simply
+        <span>data.</span>
+        It is the missing connection.
+    </h2>
+
+
+    <div class="gap-grid">
+
+        <div class="fragmented">
+
+            <h3>Today: Fragmented Journey</h3>
+
+            <div class="flow">
+                <span>Patient</span>
+                <b>?</b>
+                <span>Hospital</span>
+                <b>?</b>
+                <span>Lab</span>
+                <b>?</b>
+                <span>Research</span>
+            </div>
+
+            <p style="margin-top:25px;color:#8fa2b7;font-size:13px;">
+                Evidence may exist — but not always as one connected,
+                longitudinal research story.
+            </p>
+
+        </div>
+
+
+        <div class="connected">
+
+            <h3>EVIDARA: Connected Evidence Pathway</h3>
+
+            <div class="flow">
+                <span>Patient</span>
+                <b>→</b>
+                <span>Data</span>
+                <b>→</b>
+                <span>Trial</span>
+                <b>→</b>
+                <span>Evidence</span>
+            </div>
+
+            <p style="margin-top:25px;color:#b4c5d5;font-size:13px;">
+                Connecting appropriate evidence streams through governed,
+                consent-aware research workflows.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- SOLUTION -->
+
+<section id="solution">
+
+<div class="container">
+
+    <div class="eyebrow">04 — The Solution</div>
+
+    <h2 class="section-title">
+        A new evidence layer for
+        <span>Saudi clinical development.</span>
+    </h2>
+
+    <p class="section-lead">
+        EVIDARA connects the pieces that matter across the research journey —
+        starting with feasibility and evidence generation, then expanding toward
+        a broader evidence platform.
+    </p>
+
+
+    <div class="solution-grid">
+
+        <div class="card solution-card">
+            <div class="solution-number">01 / TRIAL INTELLIGENCE</div>
+            <h3>Know the Trial Before You Run It</h3>
+            <p>
+                Patient population intelligence, feasibility analysis,
+                recruitment insight, site requirements and laboratory needs
+                for Saudi clinical studies.
+            </p>
+        </div>
+
+        <div class="card solution-card">
+            <div class="solution-number">02 / EVIDENCE ENGINE</div>
+            <h3>Turn Data Into Evidence</h3>
+            <p>
+                Connect clinical, laboratory, biomarker and real-world evidence
+                through governed workflows designed for traceable research.
+            </p>
+        </div>
+
+        <div class="card solution-card">
+            <div class="solution-number">03 / ADVANCED THERAPY EVIDENCE</div>
+            <h3>Built for the Next Wave</h3>
+            <p>
+                Evidence support for rare diseases, biologics, therapeutic
+                proteins, peptides, small molecules, regenerative medicine
+                and future cell & gene therapy programs.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- PATIENT PASSPORT -->
+
+<section id="platform" class="patient-section">
+
+<div class="container patient-grid">
+
+    <div class="passport">
+
+        <div class="passport-top">
+            <strong>Patient Research Profile</strong>
+            <span class="status">CONSENT-GOVERNED</span>
+        </div>
+
+        <div class="profile">
+
+            <div class="avatar">P</div>
+
+            <div>
+                <strong>Patient Passport</strong>
+                <small>Longitudinal evidence journey</small>
+            </div>
+
+        </div>
+
+        <div class="data-row">
+
+            <div class="data">
+                <span>Condition</span>
+                <strong>Rare Disease</strong>
+            </div>
+
+            <div class="data">
+                <span>Biomarkers</span>
+                <strong>Available</strong>
+            </div>
+
+            <div class="data">
+                <span>Laboratory</span>
+                <strong>Longitudinal</strong>
+            </div>
+
+            <div class="data">
+                <span>Research</span>
+                <strong>Eligible Studies</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="patient-copy">
+
+        <div class="eyebrow">05 — Patient Passport</div>
+
+        <h2>
+            One patient.
+            One <span>longitudinal evidence story.</span>
+        </h2>
+
+        <p>
+            The future of research should not see a patient as a collection
+            of disconnected visits.
+        </p>
+
+        <p>
+            EVIDARA envisions a consent-driven patient research profile that
+            can connect relevant clinical history, laboratory evidence,
+            biomarkers, treatments and outcomes — where appropriate and
+            under the required governance.
+        </p>
+
+        <div class="principle">
+            <strong>
+                The patient doesn't become the product.
+                The evidence becomes the value.
+            </strong>
+        </div>
+
+        <div class="flow">
+            <span>Patient Passport</span>
+            <b>→</b>
+            <span>Evidence Layer</span>
+            <b>→</b>
+            <span>Trial Intelligence</span>
+            <b>→</b>
+            <span>RWE</span>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- HOME / REMOTE ACCESS -->
+
+<section class="access">
+
+<div class="container access-grid">
+
+    <div>
+
+        <div class="eyebrow">06 — Reach the Patient</div>
+
+        <h2 class="section-title">
+            Research should not always require
+            the patient to <span>travel.</span>
+        </h2>
+
+        <p class="section-lead">
+            EVIDARA is designed to bring appropriate parts of the research
+            journey closer to patients across Saudi Arabia through remote
+            engagement, home-based activities and local healthcare partnerships,
+            where permitted by the study protocol and applicable regulations.
+        </p>
+
+
+        <div class="access-path">
+
+            <div class="access-step">
+                <strong>Remote Screening</strong>
+                <span>Digital pre-screening and engagement</span>
+            </div>
+
+            <div class="access-step">
+                <strong>Home Visits</strong>
+                <span>Appropriate protocol-based activities</span>
+            </div>
+
+            <div class="access-step">
+                <strong>Sample Collection</strong>
+                <span>Laboratory evidence closer to patients</span>
+            </div>
+
+            <div class="access-step">
+                <strong>Telemedicine</strong>
+                <span>Remote specialist interaction</span>
+            </div>
+
+            <div class="access-step">
+                <strong>Remote Monitoring</strong>
+                <span>PROs, wearables and digital signals</span>
+            </div>
+
+            <div class="access-step">
+                <strong>Specialist Centers</strong>
+                <span>Connected research hubs</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="access-statement">
+
+        <h3>
+            From Riyadh to remote communities —
+            geography should not determine whether
+            a patient's story can contribute to research.
+        </h3>
+
+        <p>
+            EVIDARA aims to connect patients with research without trying
+            to replace existing healthcare infrastructure.
+        </p>
+
+        <p style="margin-top:18px;">
+            Instead, we envision working with healthcare providers,
+            research centers, laboratories and approved home/virtual-care
+            pathways.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- OPPORTUNITY -->
+
+<section id="opportunity" class="opportunity">
+
+<div class="container">
+
+    <div class="opportunity-header">
+
+        <div>
+
+            <div class="eyebrow">07 — The Opportunity</div>
+
+            <h2 class="section-title">
+                Saudi Arabia is building the
+                <span>environment EVIDARA needs.</span>
+            </h2>
+
+        </div>
+
+        <p class="section-lead">
+            Three signals from Saudi official sources show why this moment
+            matters for evidence infrastructure.
+        </p>
+
+    </div>
+
+
+    <div class="opportunity-grid">
+
+        <div class="op-card">
+
+            <div class="op-number">$34.6B+</div>
+
+            <h3>Biotechnology Ambition</h3>
+
+            <p>
+                The National Biotechnology Strategy targets more than
+                $34.6 billion in contribution to non-oil GDP by 2040.
+            </p>
+
+            <span class="op-source">
+                Saudi National Biotechnology Strategy
+            </span>
+
+        </div>
+
+
+        <div class="op-card">
+
+            <div class="op-number">+50%</div>
+
+            <h3>Clinical Trial Growth</h3>
+
+            <p>
+                The number of clinical trials in Saudi Arabia grew by
+                50% between 2023 and 2025.
+            </p>
+
+            <span class="op-source">
+                Saudi Vision 2030 — 2025 Report
+            </span>
+
+        </div>
+
+
+        <div class="op-card">
+
+            <div class="op-number">+83%</div>
+
+            <h3>Advanced Therapy Momentum</h3>
+
+            <p>
+                SFDA reported an 83% increase in clinical-trial applications
+                for advanced therapies and biotechnology products in 2025.
+            </p>
+
+            <span class="op-source">
+                Saudi Food & Drug Authority — 2026
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <p class="opportunity-note">
+        *These are opportunity signals, not a forecast of EVIDARA revenue or
+        a standalone market-size estimate.
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- WHY NOW -->
+
+<section>
+
+<div class="container">
+
+    <div class="eyebrow">08 — Why Now</div>
+
+    <h2 class="section-title">
+        The ecosystem is moving from
+        <span>data generation</span>
+        toward evidence-driven development.
+    </h2>
+
+    <div class="solution-grid">
+
+        <div class="card">
+            <h3>Biotechnology</h3>
+            <p>
+                Saudi Arabia's National Biotechnology Strategy places
+                biomanufacturing, biologics and genomics at the center
+                of the Kingdom's long-term development.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Real-World Evidence</h3>
+            <p>
+                SFDA's 2026 RWD/RWE framework creates a clearer regulatory
+                context for using real-world evidence in medicinal-product
+                effectiveness and safety decisions.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Rare Disease Development</h3>
+            <p>
+                SFDA launched the Nader program in 2026 to support the
+                development and access of medicines for rare diseases,
+                including flexible evidence approaches for small patient
+                populations.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- CUSTOMERS -->
+
+<section>
+
+<div class="container">
+
+    <div class="eyebrow">09 — Who EVIDARA Serves</div>
+
+    <h2 class="section-title">
+        Built for the
+        <span>clinical development ecosystem.</span>
+    </h2>
+
+    <div class="customer-grid">
+
+        <div class="customer">
+            <strong>Pharma</strong>
+            <p>Clinical development, feasibility and evidence strategy.</p>
+        </div>
+
+        <div class="customer">
+            <strong>Biotech</strong>
+            <p>Rare disease and advanced therapy development support.</p>
+        </div>
+
+        <div class="customer">
+            <strong>Diagnostics</strong>
+            <p>Biomarker and laboratory evidence intelligence.</p>
+        </div>
+
+        <div class="customer">
+            <strong>Healthcare & Research</strong>
+            <p>Patient populations, registries and real-world evidence.</p>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- BUSINESS MODEL -->
+
+<section>
+
+<div class="container">
+
+    <div class="eyebrow">10 — From Service to Platform</div>
+
+    <h2 class="section-title">
+        Start focused.
+        Build the infrastructure.
+        <span>Scale the evidence network.</span>
+    </h2>
+
+    <div class="business-box">
+
+        <div class="business-step">
+
+            <small>Today</small>
+
+            <h3>Evidence Services</h3>
+
+            <p>
+                Trial feasibility, patient population analysis,
+                site intelligence, RWE studies, laboratory and
+                biomarker evidence.
+            </p>
+
+        </div>
+
+        <div class="business-step">
+
+            <small>Next</small>
+
+            <h3>Evidence Platform</h3>
+
+            <p>
+                Rare disease registries, governed evidence networks,
+                Patient Passport and software-enabled research workflows.
+            </p>
+
+        </div>
+
+        <div class="business-step">
+
+            <small>Long Term</small>
+
+            <h3>Patient Modeling</h3>
+
+            <p>
+                Patient modeling, trial simulation and Saudi TwinTrials™
+                as future advanced capabilities after validation and
+                appropriate partnerships.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- DIFFERENCE -->
+
+<section class="compare">
+
+<div class="container">
+
+    <div class="eyebrow">11 — What Makes EVIDARA Different</div>
+
+    <h2 class="section-title">
+        Not another generic
+        <span>CRO.</span>
+    </h2>
+
+    <div class="compare-table">
+
+        <div class="compare-row">
+
+            <div class="compare-head">Traditional Approach</div>
+            <div class="compare-head">EVIDARA Direction</div>
+            <div class="compare-head">Why It Matters</div>
+
+        </div>
+
+        <div class="compare-row">
+
+            <div>Study-centric</div>
+            <div class="compare-evidara">Evidence-centric</div>
+            <div>Connect the research journey</div>
+
+        </div>
+
+        <div class="compare-row">
+
+            <div>Center-centric</div>
+            <div class="compare-evidara">Patient-access oriented</div>
+            <div>Reduce geographic barriers where possible</div>
+
+        </div>
+
+        <div class="compare-row">
+
+            <div>Single study snapshot</div>
+            <div class="compare-evidara">Longitudinal evidence</div>
+            <div>Understand the patient journey over time</div>
+
+        </div>
+
+        <div class="compare-row">
+
+            <div>Generic market view</div>
+            <div class="compare-evidara">Saudi-focused intelligence</div>
+            <div>Support locally relevant decisions</div>
+
+        </div>
+
+        <div class="compare-row">
+
+            <div>Conventional therapies</div>
+            <div class="compare-evidara">Advanced-therapy ready</div>
+            <div>Prepare for emerging modalities</div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ADVANCED THERAPIES -->
+
+<section>
+
+<div class="container">
+
+    <div class="eyebrow">12 — Advanced Biotech</div>
+
+    <h2 class="section-title">
+        Evidence infrastructure for the
+        <span>next generation of therapies.</span>
+    </h2>
+
+    <p class="section-lead">
+        EVIDARA's scientific direction is intentionally aligned with
+        therapeutic areas where patient-level evidence, biomarkers and
+        longitudinal outcomes can become increasingly important.
+    </p>
+
+    <div class="pills">
+
+        <span class="pill">Rare Diseases</span>
+        <span class="pill">Genomic Medicine</span>
+        <span class="pill">Therapeutic Proteins</span>
+        <span class="pill">Peptides</span>
+        <span class="pill">Small Molecules</span>
+        <span class="pill">Stem Cells</span>
+        <span class="pill">Regenerative Medicine</span>
+        <span class="pill">Cell Therapy</span>
+        <span class="pill">Gene Therapy</span>
+        <span class="pill">ATMPs</span>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ROADMAP -->
+
+<section>
+
+<div class="container">
+
+    <div class="eyebrow">13 — The Roadmap</div>
+
+    <h2 class="section-title">
+        A focused path from
+        <span>feasibility to simulation.</span>
+    </h2>
+
+    <div class="roadmap">
+
+        <div class="roadmap-line"></div>
+
+        <div class="roadmap-grid">
+
+            <div class="phase">
+
+                <div class="phase-dot"></div>
+
+                <small>PHASE 01</small>
+
+                <h3>Trial Intelligence</h3>
+
+                <p>
+                    Feasibility, patient population, site and recruitment
+                    intelligence.
+                </p>
+
+            </div>
+
+
+            <div class="phase">
+
+                <div class="phase-dot"></div>
+
+                <small>PHASE 02</small>
+
+                <h3>Evidence Network</h3>
+
+                <p>
+                    Rare disease registries, RWE and governed evidence
+                    infrastructure.
+                </p>
+
+            </div>
+
+
+            <div class="phase">
+
+                <div class="phase-dot"></div>
+
+                <small>PHASE 03</small>
+
+                <h3>Patient Modeling</h3>
+
+                <p>
+                    Longitudinal patient models and evidence-driven
+                    analytics.
+                </p>
+
+            </div>
+
+
+            <div class="phase">
+
+                <div class="phase-dot"></div>
+
+                <small>PHASE 04</small>
+
+                <h3>Saudi TwinTrials™</h3>
+
+                <p>
+                    Future trial simulation and patient-modeling capabilities,
+                    subject to validation and partnerships.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- WHY EVIDARA -->
+
+<section>
+
+<div class="container">
+
+    <div class="eyebrow">14 — The EVIDARA Advantage</div>
+
+    <h2 class="section-title">
+        Designed around the
+        <span>Saudi opportunity.</span>
+    </h2>
+
+    <div class="why-grid">
+
+        <div class="why">
+            <strong>Saudi-first</strong>
+        </div>
+
+        <div class="why">
+            <strong>Rare-disease focused</strong>
+        </div>
+
+        <div class="why">
+            <strong>Evidence-centered</strong>
+        </div>
+
+        <div class="why">
+            <strong>Patient-centered</strong>
+        </div>
+
+        <div class="why">
+            <strong>Advanced-therapy ready</strong>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- FOUNDER -->
+
+<section id="founder" class="founder">
+
+<div class="container founder-grid">
+
+    <div class="founder-photo">
+        <img src="founder.jpg" alt="Nievein Ahmed — Founder of EVIDARA">
+    </div>
+
+
+    <div class="founder-copy">
+
+        <div class="eyebrow">15 — Founder Story</div>
+
+        <h2>
+            Built from a belief that
+            <span>every patient story matters.</span>
+        </h2>
+
+        <p>
+            EVIDARA started with a simple question:
+            <strong>What if we could make the patient more visible in the
+            future of clinical research?</strong>
+        </p>
+
+        <p>
+            My journey began in medical laboratory science, where I learned
+            that behind every laboratory result there is a patient, a clinical
+            story and a decision that may change a life.
+        </p>
+
+        <p>
+            As my journey moved into clinical research, I became increasingly
+            interested in a bigger question:
+            What if the information we already have about patients could be
+            connected, understood and transformed into better evidence?
+        </p>
+
+        <p>
+            Rare diseases made this question even more important.
+            When patients are few, geographically dispersed and clinically
+            complex, every piece of reliable evidence matters.
+        </p>
+
+        <p>
+            EVIDARA is my attempt to turn that vision into a platform —
+            starting in Saudi Arabia, with a long-term ambition to build
+            a new evidence infrastructure for rare diseases and advanced
+            therapies.
+        </p>
+
+
+        <div class="credentials">
+
+            <span class="credential">Medical Laboratory Scientist</span>
+            <span class="credential">Clinical Research</span>
+            <span class="credential">Master's in Clinical Research</span>
+            <span class="credential">Laboratory & Diagnostic Sciences</span>
+            <span class="credential">Germany</span>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- VISION -->
+
+<section class="vision">
+
+<div class="container">
+
+    <div class="eyebrow">16 — The Bigger Vision</div>
+
+    <h2>
+        What if every patient could contribute to a
+        <span>continuously evolving evidence story?</span>
+    </h2>
+
+    <p>
+        A future where clinical journeys, laboratory evidence, biomarkers,
+        treatments and outcomes — with appropriate consent and governance —
+        can contribute to a connected evidence ecosystem.
+    </p>
+
+    <div class="flow" style="justify-content:center;margin-top:35px;">
+        <span>Patient</span>
+        <b>→</b>
+        <span>Evidence</span>
+        <b>→</b>
+        <span>Research</span>
+        <b>→</b>
+        <span>Better Therapies</span>
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- INVESTOR CTA -->
+
+<section id="investor" class="investor">
+
+<div class="container">
+
+    <div class="investor-box">
+
+        <div class="eyebrow">Building EVIDARA</div>
+
+        <h2>
+            A Saudi evidence platform
+            built for the next era of medicine.
+        </h2>
+
+        <p>
+            EVIDARA is currently at an early development stage,
+            building its initial product and validating its Saudi market,
+            technology and partnership model.
+        </p>
+
+        <a href="#contact" class="btn btn-primary">
+            Connect with the Founder →
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="container">
+
+    <div class="eyebrow">17 — Connect</div>
+
+    <h2 class="section-title">
+        Let's build the future of
+        <span>clinical evidence.</span>
+    </h2>
+
+    <div class="contact-grid">
+
+        <div>
+
+            <p class="section-lead">
+                EVIDARA is looking to connect with Saudi healthcare
+                organizations, research centers, biotechnology companies,
+                pharmaceutical partners, diagnostics companies and investors
+                interested in the future of evidence generation.
+            </p>
+
+        </div>
+
+
+        <div class="contact-card">
+    <h3>Nievein Ahmed</h3>
+    <p>Founder & Clinical Research Professional</p>
+
+    <a href="mailto:nevenahmed039@gmail.com" class="email">
+        nevenahmed039@gmail.com
+    </a>
+
+    <a href="tel:+4915123544811"
+       class="email"
+       style="display:block;margin-top:15px;">
+        +49 151 23544811
+    </a>
+</div>
